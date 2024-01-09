@@ -1,0 +1,140 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #fbf9fc;
+}
+
+*,
+:before,
+:after {
+    box-sizing: border-box;
+}
+
+.content-wrapper {
+    width: 40%;
+    border-radius: 1rem;
+    background-color: white;
+    padding: 2rem 2rem;
+    margin: 2rem auto;
+    font-size: 0.8rem;
+    box-shadow: 0px 0px 20px 0px #e7e7e7;
+}
+.title{
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #B787C9;
+    font-weight: bold;
+}
+.input{
+    width:100%;
+    border-radius: 0.3rem;
+    padding:0.6rem 1rem;
+    border:none;
+    background-color:#fbf9fc;
+    outline:none;
+    font-size: 0.8rem;
+    border: var(--bs-border-width) solid var(--bs-border-color);
+}
+.input-content{
+    margin:0.5rem 0;
+}
+.btn-submit{
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+button{
+    border: none;
+    border-radius: 0.3rem;
+    padding: 0.5rem;
+    font-weight: bold;
+    background-color: #B787C9;
+    color:white;
+    width: 100%;
+}
+.forgot-link{
+    display: flex;
+    justify-content: flex-end;
+    margin: 0.3rem;
+    font-size: 0.7rem;
+}
+.account-link{
+    display: flex;
+    justify-content: center;
+    margin-top: 0.4rem;
+    font-size: 0.7rem;
+    margin-bottom: 1rem;
+}
+.form-check{
+    margin:0.5rem 0.3rem;
+}
+
+/* HOME PAGE */
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+}
+.nav-color {
+    background-color: #ebe8e8;
+    color: white;
+    box-shadow:  0px 0px 9px 0px #cccccc;
+    padding:1rem 0;
+}
+.logged-user{
+    display: flex;
+}
+.logo .fa-solid {
+     color:#B787C9;
+}
+.user-name {
+    background-color: #B787C9;
+    color: white;
+    padding: 0.6rem 1rem;
+    border-radius: 50%;
+    font-weight: bold;
+    margin-left: 1rem;
+}
+.logged-user a{
+    text-decoration: none;
+}
+.logged-user button{
+    padding:0.2rem 1rem;
+    font-size: 0.8rem;
+}
+.dropdown-item{
+    font-size: 0.8rem;
+}
+.dropdown-item:hover{
+    background-color: #B787C9;
+    color: white;
+}
+.display-data{
+    margin-top:3rem;
+    font-size: 0.8rem;
+}
+.actions{
+    display: flex;
+}
+.btn-view-delete{
+    margin:0 0.1rem
+}
+.close{
+    width: 7%;
+    background-color: #B787C9;
+    border: none;
+}
+.modal-header .title{
+    margin: 0;
+}
+.btn-plus{
+    width:2rem;
+    height: 2rem;
+}
+.view-modal li{
+    font-size: 1rem;
+   
+}

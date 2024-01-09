@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body id="home-page">
+    <section class="nav-color">
+        <div class="container">
+            <div class="header">
+                <div class="logo">
+                    <i class="fa-solid fa-book-open-reader fa-2xl"></i>
+                </div>
+                <div class="logged-user">
+                    <button id="btn-add-book" data-bs-toggle="modal" data-bs-target="#modal-add-book">Add Book</button>
+                    <div class="logged-user">
+                        <a href="#" class="user-name" id="btn-initials" data-bs-toggle="dropdown"
+                            aria-expanded="false">P</a>
+                        <div class="dropdown-menu" aria-labelledby="btn-initials">
+                            <a class="dropdown-item" href="change-password.html" id="btn-change-pwd"
+                                data-bs-toggle="modal" data-bs-target="#modal-change-password">Change Password</a>
+                            <a class="dropdown-item" href="login.html" id="btn-logout">Log Out</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="display-data">
+        <div class="container">
+            <div class="table-responsive-md">
+                <table class="table table-bordered" id="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Book Name</th>
+                            <th scope="col">Author</th>
+                            <th scope="col">Sections</th>
+                            <th scope="col">Sub Sections</th>
+                            <th scope="col">Child Sections</th>
+                            <th scope="col" style="width:8%">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body">
+                        <tr>
+                       
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+        <!-- Modal Change Password -->
+        <div class="modal fade" id="modal-change-password" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <form id="change-pwd-form">
+                        <div class="modal-header">
+                            <h3 class="modal-title title fs-5" id="modal-title">
+                                Change Password
+                            </h3>
+                            <button type="button" class="close btn btn-dark" data-bs-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="content">
+
+                                <div class="row ">
+                                    <div class="input-content">
+                                        <div class="col">
+                                            <label>New Password</label>
+                                        </div>
+                                        <div class="col">
+                                            <input id="new-password" class="input form-control" type="password"
+                                                placeholder="Enter new password">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row ">
+                                    <div class="input-content">
+                                        <div class="col">
+                                            <label>Confirm Password</label>
+                                        </div>
+                                        <div class="col">
+                                            <input id="confirm-password" class="input form-control" type="password"
+                                                placeholder="Confirm password">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <div class="btn-submit">
+                                        <button type="submit">Change Password</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Add Book -->
+        <div class="modal fade" id="modal-add-book" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <form id="form-add-book">
+                        <div class="modal-header">
+                            <h3 class="modal-title title fs-5">
+                                Add Book
+                            </h3>
+                            <button type="button" class="close btn btn-dark" id="add-book-close"
+                                data-bs-dismiss="modal">
+                                <span>&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body" id="add-book-modal">
+                            <div class="content">
+                                <div class="row ">
+                                    <div class="input-content">
+                                        <div class="col">
+                                            <label>Book Title</label>
+                                        </div>
+                                        <div class="col">
+                                            <input id="book-title" class="input form-control" type="text"
+                                                placeholder="Enter book title">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="add-new-section">
+
+                                </div>
+                                <div class="modal-footer">
+                                    <div class="btn-submit">
+                                        <button type="submit" id="btn-save-data">Add Book</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Sub-Section -->
+        <div class="modal fade" id="modal-add-sub-section" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <form id="form-sub-section">
+                        <div class="modal-header">
+                            <h3 class="modal-title title fs-5" id="sub-section-header">
+                                Add Sub-Section
+                            </h3>
+                            <button type="button" id="sub-section-close" class="close btn btn-dark"
+                                data-bs-dismiss="modal">
+                                <span>&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="content">
+                                <div>
+                                    <span id="section-no" style="color:green;font-weight: bold;">fff</span>
+
+                                </div>
+                                <div id="add-new-sub-section">
+
+                                </div>
+                                <div class="modal-footer">
+                                    <div class="btn-submit">
+                                        <button type="submit" id="btn-fetch-sub-section">Add Sub Section</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Child Section -->
+
+        <div class="modal fade" id="modal-child" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <form id="form-child">
+                        <div class="modal-header">
+                            <h3 class="modal-title title fs-5">
+                                Add Child
+                            </h3>
+                            <button type="button" id="child-section-close" class="close btn btn-dark"
+                                data-bs-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="content">
+                                <div id="add-new-child">
+
+                                </div>
+                                <div class="modal-footer">
+                                    <div class="btn-submit">
+                                        <button type="submit" id="fetch-child-data">Add Child Section</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal View Data -->
+        <div class="modal fade" id="modal-view-book" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <h3 class="modal-title title fs-5" id="modal-book-title">
+                            Add Child
+                        </h3>
+                        <button type="button" class="close btn btn-dark" data-bs-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="content">
+                            <ul id="view-modal-content" class="view-modal">
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"></script>
+
+        <script src="assets/js/script.js"></script>
+    </section>
+</body>
+
+</html>

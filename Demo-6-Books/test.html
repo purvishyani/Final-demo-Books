@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEST DOCUMENT</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.css" />
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"></script>
+    <script>
+        const BooksData = {
+            author: "Purvi",
+            authorId: 1,
+            bookName: "Harry Porter",
+            sections: []
+        };
+
+        let sectionCounter = 1;
+        let subSectionCounter = 1;
+        let childCounter = 1;
+
+        function addSection(name) {
+            const sectionId = sectionCounter++;
+            const section = {
+                sectionId,
+                name,
+                subsections: []
+            };
+            BooksData.sections.push(section);
+            return section;
+        }
+
+        function addSubSection(section, name) {
+            const subId = subSectionCounter++;
+            const subSection = {
+                subId,
+                name,
+                children: []
+            };
+            section.subsections.push(subSection);
+            return subSection;
+        }
+
+        function addChild(subSection, name) {
+            const childId = childCounter++;
+            const child = {
+                childId,
+                name,
+                children: []
+            };
+            subSection.children.push(child);
+            return child;
+        }
+
+        const section1 = addSection("Section-1");
+        addSubSection(section1, "Sub-sec-1");
+        const subSection2 = addSubSection(section1, "Sub-sec-2");
+        addChild(subSection2, "child-1");
+        addChild(subSection2, "child-2");
+        addSubSection(section1, "Sub-sec-3");
+
+        const section2 = addSection("Section-2");
+        const subSection21 = addSubSection(section2, "Sub-sec-1");
+        addChild(subSection21, "child-1");
+        addChild(subSection21, "child-2");
+
+        const section3 = addSection("Section-3");
+        addSubSection(section3, "Sub-sec-1");
+        addSubSection(section3, "Sub-sec-2");
+        const subSection33 = addSubSection(section3, "Sub-sec-3");
+        addChild(subSection33, "child-1");
+    </script>
+</body>
+</html>
